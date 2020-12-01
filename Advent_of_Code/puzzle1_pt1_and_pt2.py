@@ -1,25 +1,25 @@
 listed = open("input.txt", "r").readlines()
 listed = [int(i.strip("\n")) for i in listed]
 final_sum = 2020
-puzzle1 = set()
-puzzle2 = set()
+part1 = set()
+part2 = set()
 
-# first half - find 2 numbers from the loaded list that sum up to 2020
+# first part - find 2 numbers from the loaded list that sum up to 2020
 for first_number in listed:
     complementary_number = final_sum - first_number
     if complementary_number in listed:
-        puzzle1.add(complementary_number * first_number)
+        part1.add(complementary_number * first_number)
 
-print(puzzle1)
+print(part1)
 
-# second half - find 3 numbers from the loaded list that sum up to 2020
+# second part - find 3 numbers from the loaded list that sum up to 2020
 for first_number in listed:
     for second_number in listed:
         third_number = final_sum - first_number - second_number
         if third_number in listed:
-            puzzle2.add(first_number * second_number * third_number)
+            part2.add(first_number * second_number * third_number)
 
-print(puzzle2)
+print(part2)
 
 
 """
